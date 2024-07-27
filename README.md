@@ -1,6 +1,10 @@
 ## Steps you could follow to get this running on your system:
 1. Clone the Repo
 2. Open Terminal and run ```npx create-next-app@latest```
+3. In terminal, <br>
+    a. cd depviz <br>
+    b. code . (if you have VS Code or use Cursor) - this should open your code editor.
+4. In VS Code - Open Terminal - Run ```npm run dev``` - opens up localhost:3000
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
