@@ -3,6 +3,7 @@
 import { useState } from "react";
 import axios from "axios";
 import DependencyGraph from "./components/dependencygraph";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 interface Dependency {
   name: string;
