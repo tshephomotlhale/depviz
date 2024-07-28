@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-firebase-auth",
+  "name": "depviz",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,27 +9,27 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@radix-ui/react-label": "^2.1.0",
-    "@radix-ui/react-slot": "^1.1.0",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.1",
-    "firebase": "^10.12.4",
-    "lucide-react": "^0.412.0",
+    "@tailwindcss/typography": "^0.5.13",
+    "@tsparticles/all": "^3.5.0",
+    "@tsparticles/react": "^3.0.0",
+    "axios": "^0.24.0",
+    "d3": "^7.9.0",
+    "multer": "^1.4.5-lts.1",
     "next": "14.2.5",
+    "next-connect": "^1.0.0",
     "react": "^18",
-    "react-dom": "^18",
-    "react-spinners": "^0.14.1",
-    "tailwind-merge": "^2.4.0",
-    "tailwindcss-animate": "^1.0.7"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
+    "@types/d3": "^7.4.3",
+    "@types/multer": "^1.4.11",
+    "@types/node": "20.14.13",
+    "@types/react": "18.3.3",
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "5.5.4"
   }
 }
