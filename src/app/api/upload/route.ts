@@ -1,40 +1,37 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { parseDependencies } from '@/app/lib/dependencyParser';
-import { writeFile } from 'fs/promises';
-import { join } from 'path';
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 
-export async function POST(request: NextRequest) {
-  console.log('Received POST request');
+export const dynamic = 'force-dynamic';
 
+export async function POST(req: NextRequest) {
   try {
-    const formData = await request.formData();
-    console.log('FormData received');
-
+    const formData = await req.formData();
     const file = formData.get('file') as File | null;
+
     if (!file) {
-      console.log('No file in FormData');
-      return NextResponse.json({ error: 'No file uploaded' }, { status: 400 });
+      throw new Error('No file uploaded');
     }
 
-    console.log('File received:', file.name, file.type, file.size);
+    // Read the file content
+    const fileContent = await file.text();
 
-    // Create a temporary file path
-    const tempDir = join(process.cwd(), 'tmp');
-    const filePath = join(tempDir, file.name);
+    // Parse the JSON content
+    const jsonData = JSON.parse(fileContent);
 
-    // Write the file to the temporary directory
-    const bytes = await file.arrayBuffer();
-    const buffer = Buffer.from(bytes);
-    await writeFile(filePath, buffer);
-    console.log('File written to:', filePath);
+    // Extract dependencies
+    const dependencies = {
+      ...jsonData.dependencies,
+      ...jsonData.devDependencies,
+    };
 
-    // Parse dependencies
-    const dependencies = await parseDependencies(filePath);
-    console.log('Dependencies parsed:', dependencies);
+    const parsedDependencies = Object.entries(dependencies).map(([name, version]) => ({
+      name,
+      version: (version as string).replace('^', ''),
+    }));
 
-    return NextResponse.json({ dependencies });
-  } catch (error) {
+    return NextResponse.json({ dependencies: parsedDependencies });
+  } catch (error: any) {
     console.error('Error processing file:', error);
-    return NextResponse.json({ error: 'Server error', details: (error as Error).message }, { status: 500 });
+    return NextResponse.json({ error: 'Error processing the file', details: error.message }, { status: 500 });
   }
 }
