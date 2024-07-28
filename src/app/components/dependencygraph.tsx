@@ -44,7 +44,7 @@ export default function DependencyGraph({ dependencies }: DependencyGraphProps) 
       .enter()
       .append("circle")
       .attr("r", 20)
-      .attr("fill", "#000080"); // Circle color
+      .attr("fill", "#BF77F6"); // Circle color
 
     const labels = svg.append("g")
       .selectAll("text")
@@ -52,7 +52,7 @@ export default function DependencyGraph({ dependencies }: DependencyGraphProps) 
       .enter()
       .append("text")
       .text(d => d.name)
-      .attr("font-size", "14px")
+      .attr("font-size", "12px")
       .attr("text-anchor", "middle")
       .attr("fill", "#ecf0f1") // Text color
       .style("pointer-events", "none"); // Prevent text from interfering with mouse events
