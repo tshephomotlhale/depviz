@@ -46,7 +46,7 @@ export default function Home() {
   return (
     
     <div className="container mx-auto p-4 center">
-      <h1 className="text-3xl font-bold mb-4 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-green-500 to-pink-500 fade-in">
+      <h1 className="text-5xl font-bold mb-4 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-800 via-green-400 to-pink-500 fade-in">
         DepViz - Dependency Visualizer
       </h1>
       <div className="flex justify-center align-content center">
@@ -54,9 +54,15 @@ export default function Home() {
         type="file"
         accept=".json"
         onChange={handleFileUpload}
-
-        className="mb-4 pl-25"
+        id="file-upload"
+        className="hidden"
       />
+      <label
+        htmlFor="file-upload"
+        className="cursor-pointer inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-blue-500 to-pink-500 hover:from-green-500 hover:to-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300 ease-in-out">
+        Upload JSON File
+        </label>
+
       </div>
       
       {loading && <p className="text-white-500">Loading...</p>}
