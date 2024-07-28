@@ -1,21 +1,3 @@
-# Project details
-## Project Description
-DepViz is a developer tool designed to simplify the process of understanding and managing project dependencies. It allows users to upload a project file, such as package.json for Node.js projects, and generates a visual graph of all dependencies. Users can click on each dependency to see detailed information, making it easier to track and manage complex dependency trees.
-
-## What the Project Does
-1. Upload Project File: Users can upload a project file (e.g., package.json).
-2. Parse Dependencies: The backend parses the uploaded file to extract dependency information.
-3. Visualize Dependencies: The frontend uses D3.js to generate a visual graph representing the dependencies and their relationships.
-4. Show Dependency Details: Users can click on any node in the graph to view detailed information about that dependency, such as its version and any sub-dependencies.
-
-## Steps you could follow to get this running on your system:
-1. Clone the Repo
-2. Open Terminal and run ```npx create-next-app@latest```
-3. In terminal, <br>
-    a. cd depviz <br>
-    b. code . (if you have VS Code or use Cursor) - this should open your code editor.
-4. In VS Code - Open Terminal - Run ```npm run dev``` - opens up localhost:3000
-
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
