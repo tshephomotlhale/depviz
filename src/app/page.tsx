@@ -65,8 +65,7 @@ export default function Home() {
       {dependencies && <DependencyGraph dependencies={dependencies} />}
       </div>
     </div>
-    
-    
+  
   );
 }
 
