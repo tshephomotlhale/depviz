@@ -45,7 +45,8 @@ export default function Home() {
 
   return (
     
-    <div className="container mx-auto p-4 center">
+    <div className="flex items-center justify-center min-h-screen">
+      <div className="container mx-auto p-4 center">
       <h1 className="text-5xl font-semibold mb-1 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-green-400 to-pink-500">
         DepViz
       </h1>
@@ -72,6 +73,7 @@ export default function Home() {
       <div className="flex justify-center align-content center">
       {dependencies && <DependencyGraph dependencies={dependencies} />}
       </div>
+    </div>
     </div>
   
   );
