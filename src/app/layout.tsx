@@ -18,15 +18,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-BHGHLLLRFL"></Script>
-        <Script id="google-analytics">
-          {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+        <Script
+          strategy="lazyOnload"
+          src={`https://www.googletagmanager.com/gtag/js?id=G-BHGHLLLRFL`}
+        />
 
-          gtag('config', 'G-BHGHLLLRFL');
-          `}
+        <Script id="ga-script" strategy="lazyOnload">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-BHGHLLLRFL', {
+              page_path: window.location.pathname,
+            });
+        `}
         </Script>
       </head>
       <body className={inter.className}>{children}</body>
