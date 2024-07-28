@@ -46,9 +46,11 @@ export default function Home() {
   return (
     
     <div className="container mx-auto p-4 center">
-      <h1 className="text-5xl font-bold mb-4 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-800 via-green-400 to-pink-500 fade-in">
-        DepViz - Dependency Visualizer
+      <h1 className="text-5xl font-semibold mb-1 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-green-400 to-pink-500">
+        DepViz
       </h1>
+      <p className="text-center mb-5 text-2xl" >
+        Dependency Visualizer</p>
       <div className="flex justify-center align-content center">
       <input 
         type="file"
